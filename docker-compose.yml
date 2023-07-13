@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  'kali-linux':
+    build: kali-linux
+    container_name: kali
+    restart: 'no'
+    tty: true
+    ports:
+      - 80:80
+      - 443:443
+      - 8000:8000
+      - 8080:8080
