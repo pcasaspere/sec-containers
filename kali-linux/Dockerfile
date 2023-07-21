@@ -11,12 +11,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ## https://airman604.medium.com/kali-linux-in-a-docker-container-5a06311624eb
 
 RUN apt update \
-    && apt full-upgrade -y
+    && apt full-upgrade -y \
+    && apt install -y kali-linux-headless
 
-# RUN apt install -y kali-linux-core \
-RUN apt install -y kali-linux-headless \
-    && apt install -y mtr iputils-ping nano \
-    && apt autoremove \
+RUN apt install -y sublist3r
+
+RUN apt install -y mtr iputils-ping nano
+RUN apt autoremove \
     && apt clean
 
 CMD [ "bash" ]
