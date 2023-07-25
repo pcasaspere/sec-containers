@@ -14,7 +14,7 @@ RUN apt update \
     && apt full-upgrade -y \
     && apt install -y kali-linux-headless
 
-RUN apt install -y sublist3r
+RUN apt install -y sublist3r dnstwist
 
 RUN apt install -y mtr iputils-ping nano
 RUN apt autoremove \
